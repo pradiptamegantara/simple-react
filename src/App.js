@@ -1,32 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'; // import file css
+import Navbar from './component/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Content from './component/Content';
+import Footer from './component/Footer';
 
-function App() {
-  const enigma = 'Enigmacamp'
-  const name = <h1>Hello {enigma}</h1>
-  function sayHello(name){
-    return `hello ${name}`
-  }
-
-  const buttontext = {
-    text : 'Send'
-  }
-
-  const myStyle = {
-    color: 'red',
-    fontSize: '100px'
-  }
-
+export default function App() {
   return (
     <>
-      {name}
-      <h1 style={{color : 'blue', fontSize : '100px'}}>{sayHello(enigma)}</h1>
-      <h1 style={myStyle}>{sayHello(enigma)}</h1>
-      <button className = 'my-button'>{buttontext.text}</button>
-      <label htmlFor='name'>Enter Name</label>
+      <Navbar />
+      <div style={{ minHeight: '100vh' }}>
+        <Content />
+      </div>
+      <Footer />
     </>
   );
 }
-
-
-export default App;
